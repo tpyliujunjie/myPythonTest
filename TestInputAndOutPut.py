@@ -1,6 +1,5 @@
 import  math
 
-
 x=10*3.25
 y=200*200
 s = 'x 的值为： ' + repr(x) + ',  y 的值为：' + repr(y) + '...'
@@ -35,13 +34,43 @@ print('Runoob: {Runoob}; Google: {Google}; Taobao: {Taobao}'.format(**table))
 for name, number in table.items():
 	print('{0:10} ==> {1:10d}'.format(name, number))
 #读取键盘输入
-str = input("请输入：")
-print ("你输入的内容是: ", str)
+str1 = input("请输入：")
+print ("你输入的内容是: ", str1)
 # 打开一个文件
 f = open("/myPythonTest/my.txt", "w")
 f.write("Python 是一个非常好的语言。\n是的，的确非常好!!\n" )
 f.close()
-#读文件
-f = open("/myPythonTest/hehe.txt", "r","utf-8")
+#读文件1
+f = open("/myPythonTest/hehe.txt", "r")
 print(f.read())
 f.close()
+
+#读文件2
+f = open("/myPythonTest/my.txt", "r")
+print(f.readline())
+f.close()
+#读文件3
+f = open("/myPythonTest/my.txt", "r")
+print(f.readlines())
+f.close()
+#读文件4
+f = open("/myPythonTest/my.txt", "r")
+for line in f:
+    print(line, end='')
+f.close()
+# write一个文件
+f = open("/myPythonTest/my.txt", "w")
+num = f.write("Python 是一个非常好的语言。\n是的，的确非常好!!\n java也是个好语言\n" )
+print(num)
+f.close()
+#如果要写入一些不是字符串的东西, 那么将需要先进行转换:
+f = open("/myPythonTest/my.txt", "w")
+f.tell()
+value = ('www.runoob.com', 14)
+s = str(value)
+f.write(s)
+f.close()
+#seek
+f=open("/myPythonTest/my.txt", "rb+")
+f.write('www.runoob.com')
+print(f.seek(5))
