@@ -12,4 +12,4 @@ def temp_convert(var):
         print ("参数没有包含数字\n", Argument)
 
 # 调用函数
-temp_convert("xy");
+temp_convert("xy")
